@@ -73,7 +73,7 @@ public class CommonTableApi {
         // 输出表
         resultTable.executeInsert("outTable");
 //        resultTable2.executeInsert("printOutTable");
-//        aggResult.executeInsert("printOutTable");
+        aggResult.executeInsert("printOutTable");
 
     }
 }
