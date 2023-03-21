@@ -1,8 +1,11 @@
 Alice, ./home, 1000
 Alice, ./user, 4000
-Judy, ./product, 1000
+Judy, ./prod?id=100, 1000
 Eric, ./user, 1000
 Tom, ./cart, 1000
 Bob, ./user, 2000
-Bob, ./product, 4000
+Bob, ./prod?id=20, 4000
 Bob, ./cart, 6000
+Mary,./home, 11000
+Mary,./cart, 13000
+Tom, ./home, 15100

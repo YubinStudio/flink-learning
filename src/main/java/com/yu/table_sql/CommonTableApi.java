@@ -61,19 +61,27 @@ public class CommonTableApi {
         // 4.2 创建输出到控制台的表
         String createPrintOutDDL = "CREATE TABLE printOutTable (" +
                 " user_name STRING, " +
-                " cnt BIGINT " +
+                " url STRING " +
                 ") WITH (" +
                 " 'connector' = 'print'" +
-//                " 'path' = 'output-table', " +
-//                " 'format' =  'csv' " +
                 ")";
 
         tableEnv.executeSql(createPrintOutDDL);
 
+        // 4.2 创建输出到控制台的表,Aggregate聚合表
+        String createPrintOutAggDDL = "CREATE TABLE printOutAggTable (" +
+                " user_name STRING, " +
+                " cnt BIGINT " +
+                ") WITH (" +
+                " 'connector' = 'print'" +
+                ")";
+
+        tableEnv.executeSql(createPrintOutAggDDL);
+
         // 输出表
-        resultTable.executeInsert("outTable");
+//        resultTable.executeInsert("outTable");
 //        resultTable2.executeInsert("printOutTable");
-        aggResult.executeInsert("printOutTable");
+        aggResult.executeInsert("printOutAggTable");
 
     }
 }

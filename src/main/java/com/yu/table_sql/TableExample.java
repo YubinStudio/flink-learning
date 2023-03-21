@@ -39,6 +39,14 @@ public class TableExample {
 
         tableEnv.toDataStream(visitTable2).print("Table2: ");
 
+        // 3.3 执行聚合计算的查询转换
+        tableEnv.createTemporaryView("clickTable", eventTable);
+
+        // 3.3 执行聚合计算的查询转换
+        Table aggResult = tableEnv.sqlQuery("select user,count(1) as cnt from clickTable group by user");
+
+        // 3.4 使用 toChangelogStream()转换为流
+        tableEnv.toChangelogStream(aggResult).print("agg");
 
         // 执行程序
         env.execute();
